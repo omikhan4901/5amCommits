@@ -1,94 +1,75 @@
 # 5AM Commits: Community Platform
 
-A systems-grade React platform built for high-velocity contributors. This project is designed as a collaborative environment where core infrastructure remains rock-solid while new members build isolated features in a "sandbox" model.
+A systems-grade React platform built for high-velocity contributors. This project is a collaborative build where the core infrastructure is protected, and features are developed in isolated "cubicles."
 
 ## 🚀 The Mission
-
 To build a technically challenging, data-driven platform that tracks community activity, visualizes growth, and simplifies developer workflows.
 
-## 🏗️ Technical Architecture: Core vs. Sandbox
+---
 
-This project follows a strict **Isolation Protocol**. To ensure the system's survival, we separate the "Kernel" from the "User-land."
+## 🏗️ The Cubicle Architecture
+
+To ensure the system remains shippable even with multiple contributors, we follow a strict isolation protocol.
 
 ### 1. The Core (`/src/core`)
-
-**Access: Only Engineering Leads (Omi, Ratul, Shohan)**
-This directory contains the central nervous system of the app.
-
-* **`store/`**: Global state management.
-
-* **`services/`**: API integration (GitHub GraphQL, etc.).
-
-* **`hooks/`**: Reusable business logic.
-
-* **`shared/`**: The Atomic UI Kit (Buttons, Inputs, Modals).
+**Access: ONLY Assigned people.**
+This is the kernel of the application. Do not modify these files unless you are a assigned to.
 
 ### 2. Sandbox Features (`/src/features`)
-
 **Access: All Contributors**
-This is where everyone else codes. Each feature lives in its own "cubicle."
+This is where the features live. Each pair or individual is assigned a "Cubicle" (a sub-folder).
+* **Rule:** You are only allowed to edit files within your assigned folder.
+* **Isolation:** Use local `useState` and internal CSS/Tailwind. Do not import from other feature folders.
+* **Placeholders:** All features have a default file with placeholder text.
 
-* **Isolation:** You only write code within your assigned folder.
+### 3. Shared Components (`/src/shared`)
+> [This is for the future]
+**Access: All Contributors (Read/Use)**
+Should contain atomic UI components (Buttons, Cards, Inputs) after sometime once we finish the assignments.
+* **Usage:** Import these to keep the site's design consistent.
+* **Contribution:** If you need a new common component, coordinate with Rajin.
 
-* **Safety:** If your feature breaks, we simply disable your folder's route; the rest of the site stays alive.
+---
 
-* **Promotion:** Once a feature is proven stable, it is integrated into the Core UI.
+## 🛠️ Contribution Workflow
 
-## 🛠️ Contribution Workflow (The "Cubicle" Rule)
-
-We maintain high code standards to ensure this project remains "Systems-Grade."
-
-### 1. Git Workflow: No Pushing to `main`
-
-The `main` branch is protected. Even the leads cannot push directly to it.
-
-1. **Clone** the repository.
-
-2. **Branch:** Create a branch named after your feature (e.g., `feat/attendance-predictor` or `feat/pomodoro`).
-
-3. **Code:** Work **only** inside your specific feature folder.
-
-4. **Pull Request (PR):** Submit a PR to `main`.
-
-5. **Review:** A Core Lead will review your logic and code style.
-
-6. **Merge:** Once approved, your code will be merged into the production build.
+### 1. Protected Main Branch
+**No one**, including leads, pushes directly to `main`.
+1. **Clone** the repo and run `npm install`.
+2. **Branch:** Create a branch named `feat/your-feature-name`.
+3. **Code:** Build your logic inside your assigned `/src/features/` cubicle.
+4. **Pull Request:** Submit a PR to `main`.
+5. **Review:** A Core Lead will review for logic, modularity, and "Clean Code."
+6. **Merge:** Approved code is merged into the production build.
 
 ### 2. Feature Assignments
+* **Core Pillars:** Pulse Engine, GitHub Sync, Hackathon Hub, UI Kit.
+* **Sandbox Modules:** CGPA Analyzer, Profile UI, Stats Widgets, Attendance Predictor, Pomodoro Timer.
 
-Check the **Notion Feature Page** for your specific pairing. Current assignments include:
-
-* **Core:** Pulse Engine, GitHub Sync, Hackathon Hub, UI Kit.
-
-* **Sandbox:** CGPA Analyzer, Profile UI, Stats Widgets, Attendance Predictor, Pomodoro Timer.
+---
 
 ## 📜 Working Agreement (The Rules)
 
-* **Clean Code:** Use descriptive variable names (`isTimerRunning` vs `tr`).
+* **Cubicle Rule:** Stay in your folder. Do not reach into `src/core` or other features.
+* **Clean Code:** Use descriptive variable names (`isTimerActive` instead of `ita`).
+* **Simplicity First:** We are using **Pure JavaScript**. No TypeScript. Focus on logic and modularity.
+* **PR Approval:** No code enters `main` without a Lead's approval.
 
-* **Modularity:** Do not reach into other people's folders. If you need a component, check `src/shared`.
+---
 
-* **Simplicity First:** We are using **Pure JavaScript**. No TypeScript for this phase. Focus on clean logic.
-
-* **PR Approval:** Every merge requires a "Look Good To Me" (LGTM) from a Lead.
-
-## 💻 Getting Started
+## 💻 Local Setup
 
 1. **Install Dependencies:**
-
-   ```
+   ```bash
    npm install
-   
    ```
 
-2. **Run Development Server:**
-
-   ```
+2. **Run Dev Server:**
+   ```bash
    npm run dev
-   
    ```
 
-3. **Start Coding:** Locate your folder in `src/features/` and replace the `Placeholder` with your logic.
+3. **Start Coding:** Find your folder in `src/features/` and turn that placeholder into a real feature.
 
 **"If it isn't documented, it doesn't exist. If it isn't tested, it's broken."**
 — *The 5AM Commits Philosophy*
