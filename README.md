@@ -1,75 +1,172 @@
-# 5AM Commits: Community Platform
+# 5AM Commits — Community Platform
 
-A systems-grade React platform built for high-velocity contributors. This project is a collaborative build where the core infrastructure is protected, and features are developed in isolated "cubicles."
-
-## 🚀 The Mission
-To build a technically challenging, data-driven platform that tracks community activity, visualizes growth, and simplifies developer workflows.
+A systems-grade React platform built for high-velocity contributors.
+This project is a collaborative build where the core infrastructure is protected, and features are developed in isolated "cubicles".
 
 ---
 
-## 🏗️ The Cubicle Architecture
+## 🚀 Mission
 
-To ensure the system remains shippable even with multiple contributors, we follow a strict isolation protocol.
+Build a technically challenging, data-driven community platform that:
+- Tracks participation and activity
+- Visualizes growth over time
+- Trains contributors in real-world Git, React, and collaboration workflows
 
-### 1. The Core (`/src/core`)
-**Access: ONLY Assigned people.**
-This is the kernel of the application. Do not modify these files unless you are a assigned to.
-
-### 2. Sandbox Features (`/src/features`)
-**Access: All Contributors**
-This is where the features live. Each pair or individual is assigned a "Cubicle" (a sub-folder).
-* **Rule:** You are only allowed to edit files within your assigned folder.
-* **Isolation:** Use local `useState` and internal CSS/Tailwind. Do not import from other feature folders.
-* **Placeholders:** All features have a default file with placeholder text.
-
-### 3. Shared Components (`/src/shared`)
-> [This is for the future]
-**Access: All Contributors (Read/Use)**
-Should contain atomic UI components (Buttons, Cards, Inputs) after sometime once we finish the assignments.
-* **Usage:** Import these to keep the site's design consistent.
-* **Contribution:** If you need a new common component, coordinate with Rajin.
+This is not a tutorial repo.
+This is a learning-by-building environment.
 
 ---
 
-## 🛠️ Contribution Workflow
+## 🧠 Architecture: The Cubicle System
 
-### 1. Protected Main Branch
-**No one**, including leads, pushes directly to `main`.
-1. **Clone** the repo and run `npm install`.
-2. **Branch:** Create a branch named `feat/your-feature-name`.
-3. **Code:** Build your logic inside your assigned `/src/features/` cubicle.
-4. **Pull Request:** Submit a PR to `main`.
-5. **Review:** A Core Lead will review for logic, modularity, and "Clean Code."
-6. **Merge:** Approved code is merged into the production build.
+To keep the project shippable with many contributors, we enforce strict isolation.
 
-### 2. Feature Assignments
-* **Core Pillars:** Pulse Engine, GitHub Sync, Hackathon Hub, UI Kit.
-* **Sandbox Modules:** CGPA Analyzer, Profile UI, Stats Widgets, Attendance Predictor, Pomodoro Timer.
+### 1. Core System (`/src/core`)
+Access: Assigned Core Leads only
+
+This is the kernel of the application:
+
+Do NOT modify anything in `/src/core` unless you are explicitly assigned.
 
 ---
 
-## 📜 Working Agreement (The Rules)
+### 2. Feature Cubicles (`/src/features`)
+Access: All Contributors
 
-* **Cubicle Rule:** Stay in your folder. Do not reach into `src/core` or other features.
-* **Clean Code:** Use descriptive variable names (`isTimerActive` instead of `ita`).
-* **Simplicity First:** We are using **Pure JavaScript**. No TypeScript. Focus on logic and modularity.
-* **PR Approval:** No code enters `main` without a Lead's approval.
+Each feature lives in its own folder (“cubicle”).
+Each person or pair is assigned exactly one cubicle.
+
+Rules:
+- You may only edit files inside your assigned folder
+- Do not import from other feature folders
+- Use local state (useState) and local logic
+- All cubicles start with placeholder components
+
+This ensures:
+- No one blocks anyone else
+- Beginners can work safely
+- The main app always stays runnable
+
+---
+
+### 3. Shared Components (`/src/shared`) [Future]
+Access: Read / Use by all
+
+This will eventually hold shared UI primitives:
+- Buttons
+- Cards
+- Inputs
+- Layout helpers
+
+If you think a component should be shared:
+- Discuss it first 
+
+---
+
+## 🛠️ Contribution Workflow (Git Rules)
+
+### 1. Main Branch Protection
+- No direct pushes to `main`
+- This rule applies to everyone, including admins
+- `main` is always deployable
+
+---
+
+### 2. Feature Branches Only
+
+All work happens on feature branches:
+
+git checkout -b feat/your-feature-name
+
+Examples:
+- feat/cgpa-analyzer
+- feat/community-pulse
+- fix/profile-card-spacing
+
+---
+
+### 3. One PR = One Purpose
+Each Pull Request should do one thing:
+- One feature
+- One fix
+- One improvement
+
+Avoid mixing unrelated changes.
+
+---
+
+### 4. Pull Request Process
+1. Pull latest `main` before opening a PR
+2. Resolve conflicts locally if any
+3. Open a PR targeting `main`
+4. A Core Lead reviews the PR
+5. Only approved PRs are merged
+
+---
+
+### 5. Review & Merge Authority
+- Only designated Core Leads can approve and merge PRs
+- Everyone is encouraged to comment, ask questions, and suggest improvements
+
+---
+
+### 6. Cubicle Respect Rule
+Do NOT modify another contributor’s cubicle unless:
+- You are assigned to it, or
+- You asked in Discord and got approval
+
+This protects ownership and learning.
+
+---
+
+## 📦 Feature Scope
+
+Core Systems (Lead-owned):
+- Community Activity / Pulse Engine
+- Activity Over Time Graphs
+- GitHub Contribution Tracker
+- Hackathon Hub
+- UI Kit / Design System
+
+Sandbox Modules (Paired & Mentored):
+- CGPA Analyzer
+- Profile UI
+- Stats Widgets
+- Attendance Predictor
+- Pomodoro Timer
+
+Assignments are based on experience and availability.
+
+---
+
+## 📜 Working Agreement
+
+- Isolation first: stay in your folder
+- Clean code: readable variable names
+- Simplicity first: Pure JavaScript (no TypeScript)
+- No AI-generated code for the first project
+- Communication matters more than speed
+
+If you’re stuck, ask.
+If you disappear, we assume you stepped back.
 
 ---
 
 ## 💻 Local Setup
 
-1. **Install Dependencies:**
-   ```bash
+1. Install dependencies:
    npm install
-   ```
 
-2. **Run Dev Server:**
-   ```bash
+2. Run dev server:
    npm run dev
-   ```
 
-3. **Start Coding:** Find your folder in `src/features/` and turn that placeholder into a real feature.
+3. Start coding:
+   Find your folder in `src/features/` and turn the placeholder into a real feature.
 
-**"If it isn't documented, it doesn't exist. If it isn't tested, it's broken."**
-— *The 5AM Commits Philosophy*
+---
+
+"If it isn't documented, it doesn't exist.
+If it isn't reviewed, it doesn't ship."
+
+— The 5AM Commits Philosophy
+
