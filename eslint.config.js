@@ -22,8 +22,19 @@ export default defineConfig([
         sourceType: 'module',
       },
     },
-    rules: {
+  rules: {
+      // Catch syntax/logic errors that actually break things
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      'react-hooks/rules-of-hooks': 'error', 
+       
+      // Set to 'warn' so they see it 
+      'no-console': 'warn',
+
+      // Explicitly turning off PropTypes for now so beginners don't get errors
+      'react/prop-types': 'off', 
+      
+      // Prevents "ReferenceError: React is not defined" in older setups
+      'react/react-in-jsx-scope': 'off',
     },
   },
 ])

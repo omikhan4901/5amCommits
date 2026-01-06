@@ -9,7 +9,7 @@ This project is a collaborative build where the core infrastructure is protected
 
 Build a technically challenging, data-driven community platform that:
 * **Tracks** participation and activity metrics.
-* **Visualizes** community growth over time.
+* **Visualizes** community growth over time..
 * **Trains** contributors in real-world Git, React, and asynchronous collaboration workflows.
 
 > **Note:** This is not a tutorial repo. This is a learning-by-building environment.

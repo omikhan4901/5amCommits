@@ -1,0 +1,19 @@
+name: Project Guard
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install Dependencies
+        run: npm install
+        
+      - name: Check for Syntax Errors
+        run: npm run lint
+        
+      - name: Check if Project Builds
+        run: npm run build

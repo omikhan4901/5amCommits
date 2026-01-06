@@ -1,10 +1,6 @@
 import React from "react";
-import {
-  HashRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
- 
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+
 // --- Core COMPONENTS (Learning Modules) ---
 
 import { HomePage } from "./core/HomePage/Homepage";
