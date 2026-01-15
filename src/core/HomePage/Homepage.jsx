@@ -11,9 +11,11 @@ import {
   ChevronRight,
   Code2,
   Timer,
-  GraduationCap,
+  ClipboardList,
+  FolderSearch,
+  Images,
 } from "lucide-react";
- 
+
 export const HomePage = () => {
   const navigate = useNavigate();
 
@@ -43,26 +45,37 @@ export const HomePage = () => {
     { path: "/profile", name: "Profile UI", icon: <User /> },
     { path: "/stats", name: "Stats Widgets", icon: <BarChart3 /> },
     {
-      path: "/attendance",
-      name: "Attendance",
-      icon: <GraduationCap />,
+      path: "/showcase",
+      name: "Project Showcase",
+      icon: <ClipboardList />,
       dev: "Newbie Slot",
     },
-    { path: "/timer", name: "Pomodoro", icon: <Timer />, dev: "Newbie Slot" },
+    {
+      path: "/rsearch",
+      name: "Resource Search",
+      icon: <FolderSearch />,
+      dev: "Newbie Slot",
+    },
+    {
+      path: "/tgallery",
+      name: "Team Gallery",
+      icon: <Images />,
+      dev: "Newbie Slot",
+    },
   ];
 
   return (
     <div className="max-w-6xl mx-auto p-6 md:p-12">
       <header className="mb-16">
         <div className="flex items-center gap-3 mb-6">
-          <div className="bg-white p-2 rounded-lg text-black">
+          <div className="bg-slate-900 p-2 rounded-lg text-white">
             <Code2 size={28} />
           </div>
-          <h1 className="text-4xl font-black text-white tracking-tighter uppercase">
+          <h1 className="text-4xl font-black text-slate-900 tracking-tighter uppercase">
             5am Commits
           </h1>
         </div>
-        <p className="text-slate-400 text-lg max-w-xl">
+        <p className="text-slate-600 text-lg max-w-xl">
           Systems-grade platform for high-velocity contributors.
         </p>
       </header>
@@ -76,10 +89,10 @@ export const HomePage = () => {
             <button
               key={item.path}
               onClick={() => navigate(item.path)}
-              className="group bg-slate-900 border border-slate-800 p-6 rounded-xl text-left hover:border-slate-500 transition-all"
+              className="group bg-white border border-slate-200 p-6 rounded-xl text-left hover:border-slate-400 transition-all shadow-sm"
             >
               <div className={`mb-4 ${item.color}`}>{item.icon}</div>
-              <h3 className="text-white font-bold">{item.name}</h3>
+              <h3 className="text-slate-900 font-bold">{item.name}</h3>
               <div className="mt-2 text-xs text-slate-600 group-hover:text-slate-400 transition-colors flex items-center">
                 Explore <ChevronRight size={12} />
               </div>
@@ -97,7 +110,7 @@ export const HomePage = () => {
             <button
               key={item.path}
               onClick={() => navigate(item.path)}
-              className="flex items-center gap-4 bg-slate-900/40 border border-slate-800 p-4 rounded-xl text-white hover:bg-slate-800 transition-colors"
+              className="flex items-center gap-4 bg-slate-100 border border-slate-200 p-4 rounded-xl text-slate-900 hover:bg-slate-200 transition-colors"
             >
               <div className="text-slate-500">{item.icon}</div>
               <span className="font-medium">{item.name}</span>
