@@ -12,14 +12,15 @@ import { GithubTracker } from "./core/GithubTracker/GithubTracker";
 import { CGPAAnalyzer } from "./features/CGPAAnalyzer/CGPAAnalyzer";
 import { ProfileUI } from "./features/ProfileUI/ProfileUI";
 import { StatsWidgets } from "./features/StatsWidgets/StatsWidgets";
-import { AttendancePredictor } from "./features/AttendancePredictor/AttendancePredictor";
-import { PomodoroTimer } from "./features/PomodoroTimer/PomodoroTimer";
+import { ProjectShowcase } from "./features/ProjectShowcase/ProjectShowcase";
+import { ResourceSearch } from "./features/ResourceSearch/ResourceSearch";
+import { TeamGallery } from "./features/TeamGallery/TeamGallery";
 
 // --- APP WRAPPER (Routing) ---
 export default function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-black font-sans selection:bg-emerald-500/30">
+      <div className="min-h-screen bg-slate-50 font-sans selection:bg-emerald-500/30">
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -29,8 +30,9 @@ export default function App() {
             <Route path="/cgpa" element={<CGPAAnalyzer />} />
             <Route path="/profile" element={<ProfileUI />} />
             <Route path="/stats" element={<StatsWidgets />} />
-            <Route path="/attendance" element={<AttendancePredictor />} />
-            <Route path="/timer" element={<PomodoroTimer />} />
+            <Route path="/showcase" element={<ProjectShowcase />} />
+            <Route path="/rsearch" element={<ResourceSearch />} />
+            <Route path="/tgallery" element={<TeamGallery />} />
           </Routes>
         </main>
       </div>
