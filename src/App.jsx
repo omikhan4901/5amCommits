@@ -15,6 +15,7 @@ import { StatsWidgets } from "./features/StatsWidgets/StatsWidgets";
 import { ProjectShowcase } from "./features/ProjectShowcase/ProjectShowcase";
 import { ResourceSearch } from "./features/ResourceSearch/ResourceSearch";
 import { TeamGallery } from "./features/TeamGallery/TeamGallery";
+import CommunityTimeline from "./core/CommunityTimeline/CommunityTimeline";
 
 // --- APP WRAPPER (Routing) ---
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/community-timeline" element={<CommunityTimeline />} />
             <Route path="/pulse" element={<CommunityPulse />} />
             <Route path="/github" element={<GithubTracker />} />
             <Route path="/hackathons" element={<HackathonPage />} />

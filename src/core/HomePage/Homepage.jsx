@@ -38,6 +38,12 @@ export const HomePage = () => {
       icon: <Trophy />,
       color: "text-amber-400",
     },
+    {
+      path: "/community-timeline",
+      name: "Community Timeline",
+      icon: <Timer />,
+      color: "text-pink-400",
+    },
   ];
 
   const sandboxItems = [
