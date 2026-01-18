@@ -11,6 +11,8 @@ import {
 
 // TODO: Remove DEMO
 function TimelineDemo() {
+	const now = new Date();
+	
 	/**
 	 * @type {Array<{
 	 * time: Date,
@@ -30,21 +32,21 @@ function TimelineDemo() {
 				"Successfully deployed the new community timeline feature with real-time updates and interactive elements.",
 		},
 		{
-			time: new Date(Date.now() - 3600000), // 1 hour ago
+			time: new Date(now - 3600000), // 1 hour ago
 			variant: "info",
 			title: "Code Review Completed",
 			description:
 				"All pull requests reviewed and merged. The team collaborated on improving performance optimizations.",
 		},
 		{
-			time: new Date(Date.now() - 86400000), // 1 day ago
+			time: new Date(now - 86400000), // 1 day ago
 			variant: "warning",
 			title: "Design System Updated",
 			description:
 				"Updated the color palette and typography scale for better accessibility and visual consistency.",
 		},
 		{
-			time: new Date(Date.now() - 172800000), // 2 days ago
+			time: new Date(now - 172800000), // 2 days ago
 			variant: "default",
 			title: "Sprint Planning",
 			description:
